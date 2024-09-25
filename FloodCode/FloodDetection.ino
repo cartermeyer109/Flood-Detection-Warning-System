@@ -151,7 +151,7 @@ void loop(){
   //Reads water-level sensor every second
   readSensor();
   
-  //The first time the set water-level is reaches, send the email
+  //The first time the set water-level is reached, send the email
   if (waterValue  >= 450 && waterLevelMet == false) {
     Serial.println("Water level limit found");
     digitalWrite(motor1Power, HIGH);
@@ -160,7 +160,7 @@ void loop(){
     waterLevelMet = true;  
   }
 
-  //After water-level is reaches, keep pumping water out while water is high
+  //After water-level is reached, keep pumping water out while water is high
   if (waterLevelMet == true && waterValue > 425) {
     digitalWrite(motor1Power, HIGH);
   }
